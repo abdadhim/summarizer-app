@@ -4,6 +4,7 @@ import requests
 
 # Define the LLM model
 huggingface_model = "bart-large-cnn"
+token = "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"
 
 # Create a LangChain task for converting long passages into headings and bullet points
 headings_and_bullet_points_task = langchain.Task(
@@ -11,7 +12,7 @@ headings_and_bullet_points_task = langchain.Task(
     inputs=["text"],
     outputs=["headings", "bullet_points"],
     model=huggingface_model,
-    api_key="YOUR_HUGGINGFACE_API_KEY",
+    api_key=token,
 )
 
 # Define a Streamlit app
